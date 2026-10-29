@@ -11,7 +11,7 @@ import com.sena.biblioteca_sena.ui.screen.HomeScreen
 import androidx.navigation.toRoute
 import com.sena.biblioteca_sena.ui.screen.BookDetailScreen
 import com.sena.biblioteca_sena.ui.screen.ReservationConfirmationScreen
-
+import com.sena.biblioteca_sena.ui.screen.MyReservationsScreen
 
 
 
@@ -58,7 +58,17 @@ fun AppNavegation(
                     navController.popBackStack(route = Home, inclusive = false)
                 },
                 onirMyReservations = {
-                    // Pendiente: navegar a MyReservations en feature/my-reservations
+                    navController.navigate(route = MyReservations) {
+                        popUpTo(route = Home)
+                    }
+                }
+            )
+        }
+
+        composable<MyReservations> {
+            MyReservationsScreen(
+                onirReservationDetail = { bookTitle, reservationDate, reservationCode ->
+                    // Pendiente: navegar a ReservationDetail en feature/reservation-detail
                 }
             )
         }
