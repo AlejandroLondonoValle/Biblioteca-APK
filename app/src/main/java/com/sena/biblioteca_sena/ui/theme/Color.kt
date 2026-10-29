@@ -15,6 +15,7 @@ val BrandPurple = Color(0xFF5B4BD6)
 val SuccessGreen = Color(0xFF22A447)
 val AccentOrange = Color(0xFFF5890A)
 val DangerRed = Color(0xFFE5393B)
+val BlueAquamarine = Color(0xFF009688)
 
 // Colores de texto
 val TextDark = Color(0xFF1F1B3A)

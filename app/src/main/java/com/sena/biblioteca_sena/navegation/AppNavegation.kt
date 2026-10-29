@@ -30,7 +30,11 @@ fun AppNavegation(
         }
 
         composable<BookList> {
-
+            BookListScreen(
+                onirBookDetail = { bookTitle ->
+                    // Pendiente: navegar a BookDetail(bookTitle) en feature/book-detail
+                }
+            )
         }
     }
 }
