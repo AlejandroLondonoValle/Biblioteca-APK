@@ -20,3 +20,6 @@ data class ReservationConfirmation(
 )
 
 
+@Serializable
+data object MyReservations
+
