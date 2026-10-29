@@ -37,7 +37,7 @@ fun BookListSection(
     val books = listOf(
         Book(iconRes = R.drawable.ic_description, iconColor = BrandPurple, title = "Clean Code"),
         Book(iconRes = R.drawable.ic_android, iconColor = SuccessGreen, title = "Kotlin para Android"),
-        Book(iconRes = R.drawable.ic_account_tree, iconColor = AccentOrange, title = "Arquitectura de Software"),
+        Book(iconRes = R.drawable.ic_memory, iconColor = AccentOrange, title = "Fundamentos de Hardware"),
         Book(iconRes = R.drawable.ic_layers, iconColor = BlueAquamarine, title = "Jetpack Compose")
     )
 

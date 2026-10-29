@@ -8,6 +8,8 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.sena.biblioteca_sena.ui.screen.BookListScreen
 import com.sena.biblioteca_sena.ui.screen.HomeScreen
+import androidx.navigation.toRoute
+import com.sena.biblioteca_sena.ui.screen.BookDetailScreen
 
 
 
@@ -32,7 +34,17 @@ fun AppNavegation(
         composable<BookList> {
             BookListScreen(
                 onirBookDetail = { bookTitle ->
-                    // Pendiente: navegar a BookDetail(bookTitle) en feature/book-detail
+                    navController.navigate(route = BookDetail(bookTitle = bookTitle))
+                }
+            )
+        }
+
+        composable<BookDetail> { backStackEntry ->
+            val detail: BookDetail = backStackEntry.toRoute()
+            BookDetailScreen(
+                bookTitle = detail.bookTitle,
+                onirConfirmation = { bookTitle ->
+                    // Pendiente: navegar a la confirmación en feature/reservation-confirmation
                 }
             )
         }

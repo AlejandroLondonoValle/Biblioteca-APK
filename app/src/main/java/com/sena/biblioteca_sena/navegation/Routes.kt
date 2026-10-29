@@ -8,3 +8,8 @@ data object Home {
 
 @Serializable
 data object BookList
+
+@Serializable
+data class BookDetail(
+    val bookTitle: String
+)
