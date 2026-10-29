@@ -20,7 +20,7 @@ import com.sena.biblioteca_sena.ui.theme.SuccessGreen
 fun SuccessTitle(text: String) {
     Row(verticalAlignment = Alignment.CenterVertically) {
         Icon(
-            painter = painterResource(id = R.drawable.ic_check_circle),
+            painter = painterResource(id = R.drawable.ic_check),
             contentDescription = null,
             tint = SuccessGreen,
             modifier = Modifier.size(26.dp)

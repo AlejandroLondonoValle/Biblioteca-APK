@@ -13,3 +13,10 @@ data object BookList
 data class BookDetail(
     val bookTitle: String
 )
+
+@Serializable
+data class ReservationConfirmation(
+    val bookTitle: String
+)
+
+

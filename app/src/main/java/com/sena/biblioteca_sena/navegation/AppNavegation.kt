@@ -10,6 +10,7 @@ import com.sena.biblioteca_sena.ui.screen.BookListScreen
 import com.sena.biblioteca_sena.ui.screen.HomeScreen
 import androidx.navigation.toRoute
 import com.sena.biblioteca_sena.ui.screen.BookDetailScreen
+import com.sena.biblioteca_sena.ui.screen.ReservationConfirmationScreen
 
 
 
@@ -44,7 +45,20 @@ fun AppNavegation(
             BookDetailScreen(
                 bookTitle = detail.bookTitle,
                 onirConfirmation = { bookTitle ->
-                    // Pendiente: navegar a la confirmación en feature/reservation-confirmation
+                    navController.navigate(route = ReservationConfirmation(bookTitle = bookTitle))
+                }
+            )
+        }
+
+        composable<ReservationConfirmation> { backStackEntry ->
+            val confirmation: ReservationConfirmation = backStackEntry.toRoute()
+            ReservationConfirmationScreen(
+                bookTitle = confirmation.bookTitle,
+                onirHome = {
+                    navController.popBackStack(route = Home, inclusive = false)
+                },
+                onirMyReservations = {
+                    // Pendiente: navegar a MyReservations en feature/my-reservations
                 }
             )
         }
