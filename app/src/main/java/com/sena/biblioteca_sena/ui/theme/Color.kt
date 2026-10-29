@@ -23,3 +23,6 @@ val TextGray = Color(0xFF6B6880)
 
 // Fondo de la app
 val BackgroundLight = Color(0xFFF8F7FD)
+
+// Fondo de las pantallas de éxito
+val SuccessBackground = Color(0xFFF1FAF3)
