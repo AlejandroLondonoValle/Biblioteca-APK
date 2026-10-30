@@ -37,4 +37,9 @@ data class RenewReservation(
 )
 
 
+@Serializable
+data class RenewalSuccess(
+    val bookTitle: String,
+    val newDate: String
+)
 
