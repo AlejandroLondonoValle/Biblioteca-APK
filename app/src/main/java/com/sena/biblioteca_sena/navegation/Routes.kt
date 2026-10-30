@@ -30,3 +30,11 @@ data class ReservationDetail(
     val reservationCode: String
 )
 
+@Serializable
+data class RenewReservation(
+    val bookTitle: String,
+    val currentDate: String
+)
+
+
+

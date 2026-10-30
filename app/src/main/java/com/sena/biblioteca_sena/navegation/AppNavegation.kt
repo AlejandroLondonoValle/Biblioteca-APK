@@ -13,7 +13,7 @@ import com.sena.biblioteca_sena.ui.screen.BookDetailScreen
 import com.sena.biblioteca_sena.ui.screen.ReservationConfirmationScreen
 import com.sena.biblioteca_sena.ui.screen.MyReservationsScreen
 import com.sena.biblioteca_sena.ui.screen.ReservationDetailScreen
-
+import com.sena.biblioteca_sena.ui.screen.RenewReservationScreen
 
 @Composable
 fun AppNavegation(
@@ -87,9 +87,22 @@ fun AppNavegation(
                 reservationCode = detail.reservationCode,
                 onirAtras = { navController.popBackStack() },
                 onirRenew = { bookTitle, reservationDate ->
-                    // Pendiente: navegar a RenewReservation en feature/renew-reservation
+                    navController.navigate(
+                        route = RenewReservation(bookTitle = bookTitle, currentDate = reservationDate)
+                    )
                 },
                 onirCancel = { navController.popBackStack() }
+            )
+        }
+        composable<RenewReservation> { backStackEntry ->
+            val renew: RenewReservation = backStackEntry.toRoute()
+            RenewReservationScreen(
+                bookTitle = renew.bookTitle,
+                currentDate = renew.currentDate,
+                onirAtras = { navController.popBackStack() },
+                onirRenewalSuccess = { bookTitle, newDate ->
+                    // Pendiente: navegar a RenewalSuccess en feature/renewal-success
+                }
             )
         }
     }
