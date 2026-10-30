@@ -14,6 +14,8 @@ import com.sena.biblioteca_sena.ui.screen.ReservationConfirmationScreen
 import com.sena.biblioteca_sena.ui.screen.MyReservationsScreen
 import com.sena.biblioteca_sena.ui.screen.ReservationDetailScreen
 import com.sena.biblioteca_sena.ui.screen.RenewReservationScreen
+import com.sena.biblioteca_sena.ui.screen.RenewalSuccessScreen
+
 
 @Composable
 fun AppNavegation(
@@ -101,7 +103,18 @@ fun AppNavegation(
                 currentDate = renew.currentDate,
                 onirAtras = { navController.popBackStack() },
                 onirRenewalSuccess = { bookTitle, newDate ->
-                    // Pendiente: navegar a RenewalSuccess en feature/renewal-success
+                    navController.navigate(route = RenewalSuccess(bookTitle = bookTitle, newDate = newDate))
+                }
+            )
+        }
+
+        composable<RenewalSuccess> { backStackEntry ->
+            val success: RenewalSuccess = backStackEntry.toRoute()
+            RenewalSuccessScreen(
+                bookTitle = success.bookTitle,
+                newDate = success.newDate,
+                onirMyReservations = {
+                    navController.popBackStack(route = MyReservations, inclusive = false)
                 }
             )
         }
