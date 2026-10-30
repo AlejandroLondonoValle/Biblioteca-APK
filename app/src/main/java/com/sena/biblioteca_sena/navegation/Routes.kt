@@ -23,3 +23,10 @@ data class ReservationConfirmation(
 @Serializable
 data object MyReservations
 
+@Serializable
+data class ReservationDetail(
+    val bookTitle: String,
+    val reservationDate: String,
+    val reservationCode: String
+)
+

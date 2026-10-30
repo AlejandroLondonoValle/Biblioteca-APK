@@ -12,7 +12,7 @@ import androidx.navigation.toRoute
 import com.sena.biblioteca_sena.ui.screen.BookDetailScreen
 import com.sena.biblioteca_sena.ui.screen.ReservationConfirmationScreen
 import com.sena.biblioteca_sena.ui.screen.MyReservationsScreen
-
+import com.sena.biblioteca_sena.ui.screen.ReservationDetailScreen
 
 
 @Composable
@@ -68,8 +68,28 @@ fun AppNavegation(
         composable<MyReservations> {
             MyReservationsScreen(
                 onirReservationDetail = { bookTitle, reservationDate, reservationCode ->
-                    // Pendiente: navegar a ReservationDetail en feature/reservation-detail
+                    navController.navigate(
+                        route = ReservationDetail(
+                            bookTitle = bookTitle,
+                            reservationDate = reservationDate,
+                            reservationCode = reservationCode
+                        )
+                    )
                 }
+            )
+        }
+
+        composable<ReservationDetail> { backStackEntry ->
+            val detail: ReservationDetail = backStackEntry.toRoute()
+            ReservationDetailScreen(
+                bookTitle = detail.bookTitle,
+                reservationDate = detail.reservationDate,
+                reservationCode = detail.reservationCode,
+                onirAtras = { navController.popBackStack() },
+                onirRenew = { bookTitle, reservationDate ->
+                    // Pendiente: navegar a RenewReservation en feature/renew-reservation
+                },
+                onirCancel = { navController.popBackStack() }
             )
         }
     }
