@@ -26,3 +26,6 @@ val BackgroundLight = Color(0xFFF8F7FD)
 
 // Fondo de las pantallas de éxito
 val SuccessBackground = Color(0xFFF1FAF3)
+
+// Azul de las notas informativas
+val InfoBlue = Color(0xFF2F80ED)

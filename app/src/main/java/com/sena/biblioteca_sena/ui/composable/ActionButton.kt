@@ -20,13 +20,16 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.compose.ui.unit.TextUnit
 
 @Composable
 fun RowScope.ActionButton(
     @DrawableRes iconRes: Int, //Iconos de la libreria de material design
     text: String, // Texto de la accion
     color: Color, // Color del boton
-    onClick: () -> Unit // Ruta del boton
+    onClick: () -> Unit, // Ruta del boton
+    fontSize: TextUnit = 16.sp
+
 ) {
     Button(
         onClick = onClick,
@@ -48,7 +51,7 @@ fun RowScope.ActionButton(
         Spacer(modifier = Modifier.width(8.dp))
         Text(
             text = text,
-            fontSize = 16.sp,
+            fontSize = fontSize,
             fontWeight = FontWeight.SemiBold,
             maxLines = 1,
             overflow = TextOverflow.Ellipsis
