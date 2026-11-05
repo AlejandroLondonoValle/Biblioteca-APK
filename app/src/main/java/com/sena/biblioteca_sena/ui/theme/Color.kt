@@ -9,3 +9,23 @@ val Pink80 = Color(0xFFEFB8C8)
 val Purple40 = Color(0xFF6650a4)
 val PurpleGrey40 = Color(0xFF625b71)
 val Pink40 = Color(0xFF7D5260)
+
+// Colores de los botones
+val BrandPurple = Color(0xFF5B4BD6)
+val SuccessGreen = Color(0xFF22A447)
+val AccentOrange = Color(0xFFF5890A)
+val DangerRed = Color(0xFFE5393B)
+val BlueAquamarine = Color(0xFF009688)
+
+// Colores de texto
+val TextDark = Color(0xFF1F1B3A)
+val TextGray = Color(0xFF6B6880)
+
+// Fondo de la app
+val BackgroundLight = Color(0xFFF8F7FD)
+
+// Fondo de las pantallas de éxito
+val SuccessBackground = Color(0xFFF1FAF3)
+
+// Azul de las notas informativas
+val InfoBlue = Color(0xFF2F80ED)
